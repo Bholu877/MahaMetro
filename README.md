@@ -18,7 +18,7 @@ The **Ticketing Code** folder contains code related toticketing queue alarm dete
     ```bash
     pip install -r requirements.txt
     ```
-4. Adjust the file path of the video in both `Human_yolov8.py` (inside the **Platform Code** folder) and `Ticketing_Counter.py` (inside the **Ticketing Code** folder) according to your requirements.
+4. Adjust the file path of the video in both `Edge_Crossing.py` (inside the **Platform Code** folder) and `Ticketing_Counter.py` (inside the **Ticketing Code** folder) according to your requirements.
 
 ## Additional Notes
 
