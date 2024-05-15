@@ -1,11 +1,13 @@
 ## Repository Contents
 
-This repository contains two folders: **Platform** and **Ticketing**.
+This repository contains two folders each representing one problem statement: 
+**Platform Code**
+**Ticketing code**
 
-### Platform
+### Platform Fall Detection
 In the **Platform** folder, you will find code related to the platform edge crossing and fall detection. To run the code, execute the file named `Human_yolov8.py`. Ensure to adjust the file path within the code to point to the desired video. This allows you to check the functionality with different videos.
 
-### Ticketing
+### Ticketing Queue
 The **Ticketing Code** folder contains code related toticketing queue alarm detection. To execute the ticketing code, run the file named `Ticketing_Counter.py`. Similarly, make sure to adjust the file path within the code to specify the desired video.
 
 ## Setup Instructions
