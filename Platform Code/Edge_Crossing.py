@@ -40,7 +40,7 @@ class_names = load_class_names(r'Yolov3\coco.names')  # Change the file path acc
 # yellow_class_id = class_names.index('yellow line')
 # edge_class_id = class_names.index('edge')
 #PF_EdgeCrossing_5/6 for testing with train on oppo track and same side track 
-video_path=r"Final_Dataset\Passenger_Crossing_Edge\Edge_Crossing_2_Cam3_0&1.avi"
+video_path=r"E:\Python New Code\Iris Dataset\Edge_Crossing_1_Cam1_1.avi"
 cam = cv2.VideoCapture(video_path)
 
 # video_path=r"Final_Dataset\Passenger_Jump_On_PF\Jump_OnPF_1_Cam2_1.avi"
@@ -163,34 +163,34 @@ while True:
                     cv2.circle(frame,(x,y+h),10,(225,0,0),2)
                     break
                 else:
-                    if confidence>0.7 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(edge_x_bottom,edge_y_bottom,edge_x_top,edge_y_top,x+w,y+h):
+                    if confidence>0.5 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(edge_x_bottom,edge_y_bottom,edge_x_top,edge_y_top,x+w,y+h):
                         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0,225), 2)
                         cv2.putText(frame, "!!!ON THE TRACK!!!", (x, y-10), font, 1, (0, 0,225), 2)
-                    elif confidence>0.7 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(edge_x_bottom,edge_y_bottom,edge_x_top,edge_y_top,center_x+w//2,center_y):
+                    elif confidence>0.5 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(edge_x_bottom,edge_y_bottom,edge_x_top,edge_y_top,center_x+w//2,center_y):
                         cv2.rectangle(frame, (x, y), (x+w, y+h), (225, 0,225), 2)
                         cv2.putText(frame, "Leaning", (x, y-10), font, 1, (225, 0,225), 2)
-                    elif confidence>0.7 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(line_x_bottom,line_y_bottom,line_x_top,line_y_top,center_x,y+h):  # Check crossing line for this person only
+                    elif confidence>0.5 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(line_x_bottom,line_y_bottom,line_x_top,line_y_top,center_x,y+h):  # Check crossing line for this person only
                         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 225, 225), 2)
                         cv2.putText(frame, "Line Crossing!", (x, y-10), font, 1, (0, 225, 225), 2)
-                    elif confidence>0.7 and class_detect == "person":
+                    elif confidence>0.5 and class_detect == "person":
                         cv2.rectangle(frame, (x, y), (x + w, y + h), (225,0,0), 2)
                         cv2.putText(frame, class_detect, (x, y - 5), font, 1, (225,0,0), 2)
             elif direction=="L":
                 if confidence>0.5 and class_detect == "train" and in_vision(x+w,y+h):
-                    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0,225), 2)
-                    cv2.circle(frame,(x+w,y+h),10,(225,0,0),2)
+                    # cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0,225), 2)
+                    # cv2.circle(frame,(x+w,y+h),10,(225,0,0),2)
                     break
                 else:
-                    if confidence>0.7 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(edge_x_top,edge_y_top,edge_x_bottom,edge_y_bottom,x,y+h):
+                    if confidence>0.5 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(edge_x_top,edge_y_top,edge_x_bottom,edge_y_bottom,x,y+h):
                         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0,225), 2)
                         cv2.putText(frame, "!!!ON THE TRACK!!!", (x, y-10), font, 1, (0, 0,225), 2)
-                    elif confidence>0.7 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(edge_x_top,edge_y_top,edge_x_bottom,edge_y_bottom,center_x-w//2,center_y):
+                    elif confidence>0.5 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(edge_x_top,edge_y_top,edge_x_bottom,edge_y_bottom,center_x-w//2,center_y):
                         cv2.rectangle(frame, (x, y), (x+w, y+h), (225, 0,225), 2)
                         cv2.putText(frame, "Leaning", (x, y-10), font, 1, (225, 0,225), 2)
-                    elif confidence>0.7 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(line_x_top,line_y_top,line_x_bottom,line_y_bottom,center_x,y+h):  # Check crossing line for this person only
+                    elif confidence>0.5 and class_detect == "person" and in_vision(center_x,y+h) and is_crossing_line(line_x_top,line_y_top,line_x_bottom,line_y_bottom,center_x,y+h):  # Check crossing line for this person only
                         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 225, 225), 2)
                         cv2.putText(frame, "Line Crossing!", (x, y-10), font, 1, (0, 225, 225), 2)
-                    elif confidence>0.7 and class_detect == "person":
+                    elif confidence>0.5 and class_detect == "person":
                         cv2.rectangle(frame, (x, y), (x + w, y + h), (225,0,0), 2)
                         cv2.putText(frame, class_detect, (x, y - 5), font, 1, (225,0,0), 2)
 
